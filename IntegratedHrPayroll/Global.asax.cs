@@ -18,6 +18,12 @@ namespace IntegratedHrPayroll
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // Đăng ký các route của HR api
+            HR.route.api.apiRoute();
+
+            // Đăng ký các route của HR controller
+            HR.web.initRoute();
         }
     }
 }

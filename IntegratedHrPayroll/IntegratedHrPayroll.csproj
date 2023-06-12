@@ -138,6 +138,22 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Employee\account-benefit.aspx" />
+    <Content Include="Employee\css\style.css" />
+    <Content Include="Employee\html\account-benefit.html" />
+    <Content Include="Employee\html\header.html" />
+    <Content Include="Employee\html\index.html" />
+    <Content Include="Employee\html\nav.html" />
+    <Content Include="Employee\html\notification.html" />
+    <Content Include="Employee\html\profile.html" />
+    <Content Include="Employee\html\work-schedule.html" />
+    <Content Include="Employee\images\avt.png" />
+    <Content Include="Employee\images\loading.gif" />
+    <Content Include="Employee\images\logo.png" />
+    <Content Include="Employee\js\script.js" />
+    <Content Include="Employee\notification.aspx" />
+    <Content Include="Employee\profile.aspx" />
+    <Content Include="Employee\work-schedule.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -149,6 +165,19 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="HR\assets\css\style.css" />
+    <Content Include="HR\assets\img\alert.png" />
+    <Content Include="HR\assets\img\home.png" />
+    <Content Include="HR\assets\img\Icon.png" />
+    <Content Include="HR\assets\img\logo.png" />
+    <Content Include="HR\assets\img\Profile.png" />
+    <Content Include="HR\assets\js\JavaScript.js" />
+    <Content Include="HR\DashboardHR.aspx" />
+    <Content Include="HR\dashboard.html" />
+    <Content Include="HR\EmployeeHR.aspx" />
+    <Content Include="HR\employee.html" />
+    <Content Include="HR\WarningHR.aspx" />
+    <Content Include="HR\warning.html" />
     <Content Include="payroll\assets\css\style.css" />
     <Content Include="payroll\assets\img\alert.png" />
     <Content Include="payroll\assets\img\home.png" />
@@ -163,6 +192,8 @@
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="payroll\payrollMasterPage.Master" />
+    <Content Include="Employee\Master.Master" />
+    <Content Include="HR\masterHR.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -225,8 +256,73 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Employee\account-benefit.aspx.cs">
+      <DependentUpon>account-benefit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\account-benefit.aspx.designer.cs">
+      <DependentUpon>account-benefit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\notification.aspx.cs">
+      <DependentUpon>notification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\notification.aspx.designer.cs">
+      <DependentUpon>notification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\work-schedule.aspx.cs">
+      <DependentUpon>work-schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\work-schedule.aspx.designer.cs">
+      <DependentUpon>work-schedule.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HR\route\api.cs" />
+    <Compile Include="HR\DashboardHR.aspx.cs">
+      <DependentUpon>DashboardHR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR\DashboardHR.aspx.designer.cs">
+      <DependentUpon>DashboardHR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HR\EmployeeHR.aspx.cs">
+      <DependentUpon>EmployeeHR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR\EmployeeHR.aspx.designer.cs">
+      <DependentUpon>EmployeeHR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HR\masterHR.Master.cs">
+      <DependentUpon>masterHR.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR\masterHR.Master.designer.cs">
+      <DependentUpon>masterHR.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HR\route\web.cs" />
+    <Compile Include="HR\WarningHR.aspx.cs">
+      <DependentUpon>WarningHR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR\WarningHR.aspx.designer.cs">
+      <DependentUpon>WarningHR.aspx</DependentUpon>
     </Compile>
     <Compile Include="payroll\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
