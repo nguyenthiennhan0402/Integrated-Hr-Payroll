@@ -8,10 +8,12 @@ namespace IntegratedHrPayroll
 {
     public class ConnectSqlServer
     {
+        string sqlCon = @"Data Source=DESKTOP-HE26NH1;Initial Catalog=item;Integrated Security=True";
+
         SqlConnection conn;
         public ConnectSqlServer()
         {
-            string sqlCon = @"Data Source=DESKTOP-HE26NH1;Initial Catalog=item;Integrated Security=True";
+            sqlCon = @"Data Source=DESKTOP-M7AP43A;Initial Catalog=item;Integrated Security=True";
             conn = new SqlConnection(sqlCon);
         }
         public DataTable getData(string sql)

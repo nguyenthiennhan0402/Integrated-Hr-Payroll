@@ -14,6 +14,7 @@ namespace IntegratedHrPayroll
         MySqlConnection connection;
         public MySqlConnection Connectsql()
         {
+            strconn = "Server=localhost;Port=3306;Database=test;Uid=root;Pwd=loiloiloi;";
             connection = new MySqlConnection(strconn);
             try
             {
@@ -27,9 +28,9 @@ namespace IntegratedHrPayroll
         }
         public DataSet gettable(string sql)
         {
-            connection = Connectsql();
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            cmd.Connection = connection;
+            MySqlConnection con = Connectsql();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.Connection = con;
             MySqlDataAdapter da = new MySqlDataAdapter();
             da.SelectCommand = cmd;
             DataSet ds = new DataSet();

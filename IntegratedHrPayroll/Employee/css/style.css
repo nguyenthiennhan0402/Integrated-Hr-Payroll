@@ -1,0 +1,543 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+
+:root {
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  --menu-color: #f5f5f5;
+  --nav-color: #c5c5c5;
+  --black-color: #212143;
+  --border-line: 0.1rem solid #000;
+  --btn-color: #44b2f2;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+/* header css */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8%;
+  background: #fff;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: var(--border-line);
+}
+
+header .logo {
+  margin-left: 4rem;
+  padding: 0 2rem;
+  width: 10rem;
+  cursor: pointer;
+}
+
+header #sub-header {
+  display: flex;
+  align-items: center;
+  margin-right: 4rem;
+}
+
+header #sub-header i {
+  cursor: pointer;
+  text-align: center;
+  font-size: 2rem;
+  color: #000;
+}
+
+header #sub-header button {
+  background-color: white;
+  color: black;
+  height: 2.5rem;
+  width: 6rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin-right: 4rem;
+  border: var(--border-line);
+  border-radius: .5rem;
+}
+
+header #sub-header img {
+  cursor: default;
+  height: 2.5rem;
+  border: .1rem solid black;
+  border-radius: 50%;
+  margin-left: 4rem;
+  margin-right: 2rem;
+}
+
+/* left menu css */
+#nav {
+  position: fixed;
+  top: 8%;
+  left: 0;
+  width: 15%;
+  height: 100%;
+  background-color: var(--menu-color);
+  border: var(--border-line);
+  border-top: none;
+}
+
+.left-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  background: var(--menu-color);
+}
+
+.left-menu nav {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  width: 100%;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  border-bottom: var(--border-line);
+  cursor: pointer;
+}
+
+.nav-link.active {
+  background-color: var(--nav-color);
+}
+
+.nav-link {
+  background-color: var(--menu-color);
+}
+
+nav i {
+  line-height: 6rem;
+  padding-left: 3rem;
+  color: #000;
+  font-size: 2rem;
+}
+
+nav span {
+  width: 70%;
+  height: 6rem;
+  padding-left: 2rem;
+  font-size: 2rem;
+  color: var(--black-color);
+  flex: none;
+  line-height: 6rem;
+  font-weight: 600;
+}
+
+#container {
+  position: relative;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 6rem;
+  padding-right: 10%;
+  background: var(--nav-color);
+  border-bottom: var(--border-line);
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+/* profile css */
+#profile {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 15%;
+  top: 8%;
+}
+
+#profile .basic-info {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 40%;
+}
+
+#profile .basic-info .title,
+#profile .contact-info .title {
+  font-size: 3rem;
+  font-weight: bolder;
+  margin-bottom: 2%;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 700;
+}
+
+#profile .box-item {
+  margin-left: 6%;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+}
+
+#profile .box-item label {
+  font-size: 2rem;
+  color: var(--black-color);
+  width: 40%;
+}
+
+#profile .box-item input {
+  border-radius: .4rem;
+  font-size: 2.2rem;
+  width: 60%;
+  margin-left: 2%;
+  border: var(--border-line);
+}
+
+/* contact info css */
+
+#profile .contact-info {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  width: 40%;
+}
+
+/* box avatar css */
+
+#profile .box-avatar {
+  position: absolute;
+  top: 12%;
+  left: 62%;
+}
+
+#profile img {
+  width: 20rem;
+  position: absolute;
+}
+
+.box-avatar i {
+  font-size: 4rem;
+  position: fixed;
+  top: 42%;
+}
+
+.box-avatar i:hover {
+  cursor: pointer;
+  color: var(--btn-color);
+}
+
+.box-avatar .change-btn {
+  position: fixed;
+  text-transform: uppercase;
+  width: 5%;
+  height: 4rem;
+  background: var(--btn-color);
+  color: #fff;
+  border: var(--border-line);
+  border-radius: 2rem;
+  font-size: 1.8rem;
+  top: 42%;
+  right: 12%;
+  font-weight: 700;
+}
+
+.box-avatar .change-btn:hover {
+  background: #ccc;
+  color: #00189d;
+  letter-spacing: .2rem;
+  cursor: pointer;
+}
+
+/* button update css */
+#profile .update-btn {
+  position: absolute;
+  left: 40%;
+  bottom: 25%;
+  text-transform: uppercase;
+  width: 14rem;
+  height: 6rem;
+  background: var(--btn-color);
+  color: #fff;
+  border: var(--border-line);
+  border-radius: 2rem;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#profile .update-btn:hover {
+  background: #ccc;
+  color: #00189d;
+  letter-spacing: .2rem;
+  cursor: pointer;
+}
+
+/* click change btn */
+#profile .box-change-avt {
+  display: none;
+  position: fixed;
+  top: 18%;
+  left: 20%;
+  bottom: 6%;
+  right: 8%;
+  border-radius: 2rem;
+  background-color: #aaa;
+  opacity: 0.9;
+}
+
+.box-change-avt > i,
+.box-update i {
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: 4%;
+  right: 2%;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.box-change-avt > i:hover,
+.box-update i:hover {
+  color: var(--btn-color);
+  scale: 1.5;
+}
+
+.box-change-avt .box {
+  background: var(--btn-color);
+  left: 50%;
+  top: 50%;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 5%;
+  box-shadow: 0 12px 15px rgba(255, 255, 255, 0.6);
+}
+
+.box-change-avt .box > i {
+  color: #fff;
+  font-size: 20rem;
+  display: block;
+  margin: 2rem 4rem;
+}
+
+.box-change-avt .box .box-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-change-avt .box .box-item-change {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  margin: 1rem 2rem;
+}
+
+.box-change-avt .box .box-item-change i {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.box-change-avt .box .box-item-change span {
+  font-size: 1.8rem;
+  color: #eee;
+  cursor: pointer;
+}
+
+#profile .box-update {
+  display: none;
+  position: fixed;
+  top: 18%;
+  left: 20%;
+  bottom: 6%;
+  right: 8%;
+  border-radius: 2rem;
+  background-color: #aaa;
+  opacity: 0.9;
+}
+
+#profile .box-update span {
+  color: #fff;
+  display: block;
+  position: absolute;
+  border-radius: 2rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4.8rem;
+  font-weight: 800;
+  background-color: #44b2f2;
+  padding: 3rem 2rem;
+  cursor: default;
+}
+
+/* work schedule css */
+#work-schedule {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 15%;
+  top: 8%;
+}
+
+#work-schedule .select-schedule-btn {
+  position: absolute;
+  width: 18rem;
+  height: 4rem;
+  border: var(--border-line);
+  border-radius: 1.2rem;
+  background-color: #ccc;
+  opacity: 0.7;
+  top: 10%;
+  left: 5%;
+}
+
+#work-schedule .select-schedule-btn i {
+  font-size: 1.4rem;
+  color: var(--black-color);
+  line-height: 4rem;
+  margin-left: 1rem;
+}
+
+#work-schedule .select-schedule-btn:hover {
+  background: var(--btn-color);
+  cursor: pointer;
+}
+
+#work-schedule .select-schedule-btn i:hover {
+  color: #fff;
+}
+
+/* update schedul btn */
+#work-schedule .update-btn {
+  position: fixed;
+  text-transform: uppercase;
+  width: 18rem;
+  height: 4rem;
+  right: 10%;
+  background: #fff;
+  color: #000;
+  border: .2rem solid var(--btn-color);
+  border-radius: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  top: 18%;
+}
+
+#work-schedule .update-btn:hover {
+  background: var(--btn-color);
+  color: #fff;
+  letter-spacing: .4rem;
+  cursor: pointer;
+}
+
+/* schedule css */
+#work-schedule .schedule {
+  position: fixed;
+  top: 26%;
+  left: 20%;
+  height: 60rem;
+  width: 135rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.schedule .day-of-week {
+  flex-basis: calc(100% / 7 - 1rem);
+  display: flex;
+  flex-direction: column;
+  background: #3b5dc9;
+  border-radius: 1rem;
+}
+
+.schedule .day-of-week:first-child {
+  border-left: .1rem solid #acbeff;
+}
+
+.schedule .day-of-week:last-child {
+  border-right: none;
+}
+
+.schedule .day-of-week span {
+  border-bottom: .1rem solid #acbeff;
+  flex-grow: 1;
+  height: calc(55rem / 24);
+  border-right: .1rem solid #acbeff;
+}
+
+.schedule .day-name {
+  font-weight: bolder;
+  text-align: center;
+  background: #acbeff;
+  border-radius: 1rem 1rem 1rem 0rem;
+  font-size: 1.4rem;
+  line-height: calc(55rem / 20);
+}
+
+.schedule .hour {
+  padding-left: .8rem;
+  line-height: calc(55rem / 24);
+  color: #eee;
+}
+
+#work-schedule .update-schedule {
+  display: none;
+  position: fixed;
+  width: 140rem;
+  height: 80rem;
+  opacity: 0.7;
+}
+
+.update-schedule img{
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(6%, 8%);
+}
+
+/* account and benefit css */
+#account-benefit {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 15%;
+  top: 8%;
+}
+
+/* notification css */
+#notification {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 15%;
+  top: 8%;
+}
