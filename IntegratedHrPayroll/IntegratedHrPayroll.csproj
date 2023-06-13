@@ -228,6 +228,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="payroll\ConnectMysql2.cs" />
     <Compile Include="payroll\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,6 +236,7 @@
     <Compile Include="payroll\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="payroll\getAllEmployee.cs" />
     <Compile Include="payroll\listempl.aspx.cs">
       <DependentUpon>listempl.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

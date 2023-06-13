@@ -12,13 +12,7 @@
        
 
             <asp:GridView ID="GridView1" runat="server">
-                <Columns>
-                   <asp:TemplateField>
-                       <ItemTemplate>
-                           <asp:TextBox Text='<%#Eval("id")%>' ID="txtsl" runat="server"></asp:TextBox>
-                       </ItemTemplate>
-                   </asp:TemplateField>
-                </Columns>
+                
             </asp:GridView>
         </div>
     </form>
