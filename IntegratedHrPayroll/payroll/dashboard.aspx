@@ -10,9 +10,22 @@
                         </div>
                         <div class="dashboard-display ">
                             <div class="dashboard-shareholders">
-                                <table class="table-shareholders" border="1px">
+                                <asp:GridView ID="GridView1" HeaderStyle-CssClass="colum-header" BorderWidth="1px" runat="server" AutoGenerateColumns="False" Width="100%">
+                                    <Columns >
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Full Name" DataField="fullname" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Gender" DataField="Gender" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Nation" DataField="Ethnicity" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Payrate" DataField="payrate" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Paid To Date" DataField="paid_to_date" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Tax Percentage" DataField="tax_percentage" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Pay Amount" DataField="payamount" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" DataField="total_income" HeaderText="Total Income"  />
+                                    </Columns>
+                                    
+                                </asp:GridView>
+                                <%--<table class="table-shareholders" border="1px">
                                     <tr class="table-shareholders-row">
-                                            <td class="table-shareholders-colum colum-header">Date</td>
+                                            <td class="table-shareholders-colum colum-header">Date</td> xoa bang nay
                                             <td class="table-shareholders-colum colum-header">Name of shareholder</td>
                                             <td class="table-shareholders-colum colum-header">Gender</td>  
                                             <td class="table-shareholders-colum colum-header">Nation</td> 
@@ -24,21 +37,27 @@
                                         <td class="table-shareholders-colum ">Nam</td>  
                                         <td class="table-shareholders-colum ">Kinh</td> 
                                         <td class="table-shareholders-colum ">17,123,000</td>             
-
-                                </tr>
-                                <tr class="table-shareholders-row">
-                                    <td class="table-shareholders-colum ">16/03/2023</td>
-                                    <td class="table-shareholders-colum ">Cổ Đong B</td>
-                                    <td class="table-shareholders-colum ">Nữ</td>  
-                                    <td class="table-shareholders-colum ">Kinh</td> 
-                                    <td class="table-shareholders-colum ">7,000,000</td>             
-
-                            </tr>
-                                    
-                                </table>    
+                                    </tr>
+                                </table>   --%> 
                             </div>
                             <div class="dashboard-employee unable-display">
-                                <table class="table-shareholders" border="1px">
+                                <asp:GridView ID="GridView2" HeaderStyle-CssClass="colum-header" BorderWidth="1px" runat="server" AutoGenerateColumns="False" Width="100%">
+                                    <columns >
+                                        <asp:boundfield itemstyle-cssclass="table-shareholders-colum" datafield="plan_name" headertext="total income"  />
+                                        <asp:boundfield itemstyle-cssclass="table-shareholders-colum" datafield="total_income" headertext="total income"  />
+                                    </columns>
+                                   <%--<Columns >
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Full Name" DataField="fullname" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Gender" DataField="Gender" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Nation" DataField="Ethnicity" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Payrate" DataField="payrate" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Paid To Date" DataField="paid_to_date" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Tax Percentage" DataField="tax_percentage" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" HeaderText="Pay Amount" DataField="payamount" />
+                                        <asp:BoundField ItemStyle-CssClass="table-shareholders-colum" DataField="total_income" HeaderText="Total Income"  />
+                                    </Columns>--%>
+                                </asp:GridView>
+                                <%--<table class="table-shareholders" border="1px">
                                     <tr class="table-shareholders-row">
                                             <td class="table-shareholders-colum colum-header">Date</td>
                                             <td class="table-shareholders-colum colum-header">Type of employee</td>
@@ -54,7 +73,7 @@
                                         <td class="table-shareholders-colum">Part-time</td>
                                         <td class="table-shareholders-colum">6,018,700</td>              
                                     </tr>
-                                </table>    
+                                </table> --%>   
                             </div>
                         </div>
                     </div>
