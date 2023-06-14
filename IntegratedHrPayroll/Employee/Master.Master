@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="IntegratedHrPayroll.Employee.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Profile</title>
+    <link rel="shortcut icon" href="images/logo.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+            <!-- main header section starts -->
+            <header>
+                <img src="images/logo.png" alt="logo" class="logo" />
+                <div id="sub-header">
+                    <img src="images/avt.png" alt="avatar" class="avt" />
+                </div>
+            </header>
+            <!-- main header section ends -->
+        </div>
+        <div id="nav">
+            <!-- nav section starts -->
+            <div class="left-menu">
+                <nav>
+                    <a runat="server" id="atagprofile" class="profile">
+                        <i class="fa-solid fa-user"></i>
+                        <span>profile</span>
+                    </a>
+                    <a runat="server" id="atagschedule" class="work-schedule">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>work schedule</span>
+                    </a>
+                    <a runat="server" id="atagbenefit" class="account-benefit">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>account & benefit</span>
+                    </a>
+                    <a runat="server" id="atagnotification" class="notification">
+                        <i class="fa-regular fa-bell"></i>
+                        <span>notification</span>
+                    </a>
+                </nav>
+            </div>
+            <!-- nav section ends -->
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    --black: #162938;
+    --white: rgb(233, 214, 199);
+    --box-shadown-black: .5rem .5rem .5rem rgba(0, 0, 0, .4);
+    --box-shadown-white: .5rem .5rem .5rem rgba(255, 255, 255, .4);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../images/groot.jpg') no-repeat;
+    background-size: cover;
+    min-height: 55rem;
+    background-position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    box-shadow: var(--box-shadown-white);
+}
+
+    header img {
+        width: 3rem;
+        user-select: none;
+    }
+
+.navbar a {
+    position: relative;
+    font-size: 1rem;
+    color: #ccc;
+    font-weight: 400;
+    margin-left: 2rem;
+}
+
+    .navbar a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 0.15rem;
+        background: #ccc;
+        left: 0;
+        bottom: -0.4rem;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .5s;
+    }
+
+    .navbar a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+.navbar .btn-log {
+    width: 6rem;
+    height: 2.5rem;
+    margin-left: 2rem;
+    border: .1rem solid #ccc;
+    border-radius: .2rem;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ccc;
+    transition: .5s;
+}
+
+    .navbar .btn-log:hover {
+        background: #fff;
+        color: var(--black);
+    }
+
+.box-container {
+    position: relative;
+    top: 2rem;
+    width: 30rem;
+    height: 40rem;
+    background: transparent;
+    border: .1rem solid #ccc;
+    border-radius: .5rem;
+    backdrop-filter: blur(2rem);
+    box-shadow: var(--box-shadown-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease;
+}
+
+    .box-container.active-popup {
+        transform: scale(1);
+    }
+
+    .box-container .form-box {
+        transition: transform .5s ease;
+        transform: translateX(0);
+    }
+
+    .box-container.active .form-box {
+        transition: none;
+        transform: translateX(-30rem)
+    }
+
+    .box-container .icon-close {
+        position: absolute;
+        top: .1rem;
+        right: .4rem;
+        width: 2rem;
+        height: 2rem;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .box-container .form-box {
+        width: 100%;
+        padding: 2rem;
+    }
+
+.form-box h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    border-bottom: .2rem solid var(--white);
+    margin-bottom: 4rem;
+}
+
+    .input-box label {
+        position: absolute;
+        top: 50%;
+        left: .5rem;
+        transform: translateY(-50%);
+        font-size: 1rem;
+        color: var(--white);
+        font-weight: 400;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    .input-box .input:focus ~ label,
+    .input-box .input:valid ~ label {
+        top: -1.2rem;
+    }
+
+    .input-box .input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        font-size: 1rem;
+        color: var(--white);
+        font-weight: 600;
+        padding-right: 3rem;
+    }
+
+    .input-box .icon {
+        position: absolute;
+        right: .5rem;
+        font-size: 1.5rem;
+        color: var(--white);
+        line-height: 1.5rem;
+    }
+
+.remember-forgot {
+    font-size: .9rem;
+    color: #ccc;
+    font-weight: 300;
+    margin: -2rem 0rem 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .remember-forgot label input {
+        accent-color: var(--white);
+        margin-right: 0.5rem;
+    }
+
+    .remember-forgot a {
+        color: var(--white);
+    }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+.btn {
+    width: 100%;
+    height: 3rem;
+    border-radius: .5rem;
+    background: var(--black);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+}

@@ -45,6 +45,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Web.2012.1.0.0\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Web.2012.1.0.0\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Web.2012.1.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Web.2012.1.0.0\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>C:\Users\NGUYEN THIEN NHAN\Downloads\mysql-connector-net-8.0.33-noinstall\v4.6.2\MySql.Data.dll</HintPath>
     </Reference>
@@ -131,82 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\Antlr3.Runtime.pdb" />
-    <Content Include="bin\AspNet.ScriptManager.bootstrap.dll" />
-    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
-    <Content Include="bin\IntegratedHrPayroll.dll" />
-    <Content Include="bin\IntegratedHrPayroll.pdb" />
-    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
-    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.xml" />
-    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="bin\Microsoft.ScriptManager.MSAjax.dll" />
-    <Content Include="bin\Microsoft.ScriptManager.WebForms.dll" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\MySql.Data.dll" />
-    <Content Include="bin\MySql.Data.xml" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
-    <Content Include="bin\roslyn\csc.exe" />
-    <Content Include="bin\roslyn\csi.exe" />
-    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
-    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
-    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
-    <Content Include="bin\roslyn\System.AppContext.dll" />
-    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
-    <Content Include="bin\roslyn\System.Console.dll" />
-    <Content Include="bin\roslyn\System.Diagnostics.DiagnosticSource.dll" />
-    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
-    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
-    <Content Include="bin\roslyn\System.Globalization.Calendars.dll" />
-    <Content Include="bin\roslyn\System.IO.Compression.dll" />
-    <Content Include="bin\roslyn\System.IO.Compression.ZipFile.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
-    <Content Include="bin\roslyn\System.Net.Http.dll" />
-    <Content Include="bin\roslyn\System.Net.Sockets.dll" />
-    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
-    <Content Include="bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
-    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
-    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
-    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
-    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
-    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
-    <Content Include="bin\roslyn\System.Threading.Tasks.Extensions.dll" />
-    <Content Include="bin\roslyn\System.ValueTuple.dll" />
-    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
-    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
-    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
-    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
-    <Content Include="bin\roslyn\vbc.exe" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="bin\System.Buffers.dll" />
-    <Content Include="bin\System.Memory.dll" />
-    <Content Include="bin\System.Numerics.Vectors.dll" />
-    <Content Include="bin\System.Threading.Tasks.Extensions.dll" />
-    <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Helpers.xml" />
-    <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
-    <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Optimization.xml" />
-    <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
-    <Content Include="bin\System.Web.Webpages.Deployment.dll" />
-    <Content Include="bin\System.Web.Webpages.Deployment.xml" />
-    <Content Include="bin\System.Web.Webpages.dll" />
-    <Content Include="bin\System.Web.Webpages.Razor.dll" />
-    <Content Include="bin\System.Web.Webpages.Razor.xml" />
-    <Content Include="bin\System.Web.Webpages.xml" />
-    <Content Include="bin\WebGrease.dll" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -216,17 +152,9 @@
     <Content Include="Default.aspx" />
     <Content Include="Employee\account-benefit.aspx" />
     <Content Include="Employee\css\style.css" />
-    <Content Include="Employee\html\account-benefit.html" />
-    <Content Include="Employee\html\header.html" />
-    <Content Include="Employee\html\index.html" />
-    <Content Include="Employee\html\nav.html" />
-    <Content Include="Employee\html\notification.html" />
-    <Content Include="Employee\html\profile.html" />
-    <Content Include="Employee\html\work-schedule.html" />
     <Content Include="Employee\images\avt.png" />
     <Content Include="Employee\images\loading.gif" />
     <Content Include="Employee\images\logo.png" />
-    <Content Include="Employee\js\script.js" />
     <Content Include="Employee\notification.aspx" />
     <Content Include="Employee\profile.aspx" />
     <Content Include="Employee\work-schedule.aspx" />
@@ -248,17 +176,17 @@
     <Content Include="HR\assets\img\logo.png" />
     <Content Include="HR\assets\img\Profile.png" />
     <Content Include="HR\assets\js\JavaScript.js" />
-    <Content Include="HR\DashboardHR.aspx" />
     <Content Include="HR\dashboard.html" />
-    <Content Include="HR\EmployeeHR.aspx" />
+    <Content Include="HR\DashboardHR.aspx" />
     <Content Include="HR\employee.html" />
-    <Content Include="HR\WarningHR.aspx" />
+    <Content Include="HR\EmployeeHR.aspx" />
     <Content Include="HR\warning.html" />
+    <Content Include="HR\WarningHR.aspx" />
     <Content Include="LoginPage\assets\css\style.css" />
     <Content Include="LoginPage\assets\images\groot.jpg" />
     <Content Include="LoginPage\assets\images\logo.png" />
     <Content Include="LoginPage\assets\js\script.js" />
-    <Content Include="LoginPage\LoginPage.aspx" />
+    <Content Include="LoginPage\Login.aspx" />
     <Content Include="payroll\assets\css\style.css" />
     <Content Include="payroll\assets\img\alert.png" />
     <Content Include="payroll\assets\img\home.png" />
@@ -275,17 +203,6 @@
     <Content Include="payroll\payrollMasterPage.Master" />
     <Content Include="Employee\Master.Master" />
     <Content Include="HR\masterHR.Master" />
-    <Content Include="bin\IntegratedHrPayroll.dll.config" />
-    <Content Include="bin\roslyn\csc.exe.config" />
-    <Content Include="bin\roslyn\csc.rsp" />
-    <Content Include="bin\roslyn\csi.exe.config" />
-    <Content Include="bin\roslyn\csi.rsp" />
-    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\roslyn\vbc.exe.config" />
-    <Content Include="bin\roslyn\vbc.rsp" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="LoginPage\LoginPage.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -351,30 +268,35 @@
     </Compile>
     <Compile Include="Employee\account-benefit.aspx.cs">
       <DependentUpon>account-benefit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Employee\account-benefit.aspx.designer.cs">
       <DependentUpon>account-benefit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employee\Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Employee\Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Employee\notification.aspx.cs">
       <DependentUpon>notification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Employee\notification.aspx.designer.cs">
       <DependentUpon>notification.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employee\profile.aspx.cs">
       <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Employee\profile.aspx.designer.cs">
       <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employee\work-schedule.aspx.cs">
       <DependentUpon>work-schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Employee\work-schedule.aspx.designer.cs">
       <DependentUpon>work-schedule.aspx</DependentUpon>
@@ -382,46 +304,50 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HR\route\api.cs" />
     <Compile Include="HR\DashboardHR.aspx.cs">
       <DependentUpon>DashboardHR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HR\DashboardHR.aspx.designer.cs">
       <DependentUpon>DashboardHR.aspx</DependentUpon>
     </Compile>
     <Compile Include="HR\EmployeeHR.aspx.cs">
       <DependentUpon>EmployeeHR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HR\EmployeeHR.aspx.designer.cs">
       <DependentUpon>EmployeeHR.aspx</DependentUpon>
     </Compile>
     <Compile Include="HR\masterHR.Master.cs">
       <DependentUpon>masterHR.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HR\masterHR.Master.designer.cs">
       <DependentUpon>masterHR.Master</DependentUpon>
     </Compile>
+    <Compile Include="HR\route\api.cs" />
     <Compile Include="HR\route\web.cs" />
     <Compile Include="HR\WarningHR.aspx.cs">
       <DependentUpon>WarningHR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HR\WarningHR.aspx.designer.cs">
       <DependentUpon>WarningHR.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage\LoginPage.aspx.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
+    <Compile Include="LoginPage\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LoginPage\LoginPage.aspx.designer.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
+    <Compile Include="LoginPage\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginPage\LoginPage.Master.cs">
       <DependentUpon>LoginPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginPage\LoginPage.Master.designer.cs">
       <DependentUpon>LoginPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="payroll\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

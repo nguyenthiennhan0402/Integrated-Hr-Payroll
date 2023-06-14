@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.master.cs" Inherits="IntegratedHrPayroll.LoginPage.LoginPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Login-Page</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/images/logo.png" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <img src="assets/images/logo.png" />
+            <div class="navbar">
+                <a href="#">home</a>
+                <a href="#">about</a>
+                <a href="#">contact</a>
+                <button class="btn-log">login</button>
+            </div>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
