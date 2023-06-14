@@ -171,7 +171,7 @@
 .table-total-em-col2 {
     width: 50%;
     height: 100%;
-    transform: rotate(-90deg);
+    /*transform: rotate(-90deg);*/
 }
 
 .total-em {
@@ -193,7 +193,6 @@ circle {
     /*stroke: #38CB89;*/
     stroke-width: 20px;
     stroke-dasharray: 439;
-    stroke-dashoffset: 0;
     animation: anim 1s linear forwards;
 }
 
@@ -203,7 +202,7 @@ circle {
     }
 
     100% {
-        stroke-dashoffset: 150;
+        stroke-dashoffset: calc(439 - var(--offset));
     }
 }
 

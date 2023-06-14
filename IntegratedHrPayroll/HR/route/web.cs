@@ -13,7 +13,7 @@ namespace IntegratedHrPayroll.HR
         public static void initRoute()
         {
             RouteTable.Routes.MapPageRoute("DashboardHR", "", "~/DashboardHR.aspx");
-            RouteTable.Routes.MapPageRoute("EmployeeHR", "", "~/EmployeeHR.aspx");
+            RouteTable.Routes.MapPageRoute("EmployeeHR", "{name}", "~/EmployeeHR.aspx");
             RouteTable.Routes.MapPageRoute("WarningHR", "", "~/DashboardHR.aspx");
         }
     }

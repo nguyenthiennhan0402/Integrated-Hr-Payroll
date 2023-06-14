@@ -2,10 +2,24 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="body-main-search">
-        <input type="text" class="search-input" placeholder="Employee Name...">
-        <button class="search-btn">Find</button>
+        <form action="EmployeeHR.aspx" method="post">
+            <input type="text" class="search-input" placeholder="Employee Name..." name="search_input">
+            <button type="submit" class="search-btn">Find</button>
+        </form>
     </div>
-    <table class="table-shareholders" border="1px">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" CssClass="table-shareholders">
+        <Columns>
+            <asp:BoundField DataField="EmployeeName" HeaderText="Employee Name" />
+            <asp:BoundField DataField="Gender" HeaderText="Gender" />
+            <asp:BoundField DataField="Nation" HeaderText="Nation" />
+            <asp:BoundField DataField="Type" HeaderText="Type" />
+            <asp:BoundField DataField="Department" HeaderText="Department" />
+            <asp:BoundField DataField="WorkingDay" HeaderText="Working Day" />
+            <asp:BoundField DataField="NumberOfDaysOff" HeaderText="Number Of Days Off" />
+            <asp:BoundField DataField="MaximumNumberOfDaysOff" HeaderText="Maximum Number Of Days Off" />
+        </Columns>
+    </asp:GridView>
+    <%--<table class="table-shareholders" border="1px">
         <tr class="table-shareholders-row">
             <td class="table-shareholders-colum colum-header">Employee Name</td>
             <td class="table-shareholders-colum colum-header">Gender</td>
@@ -56,5 +70,5 @@
             <td class="table-shareholders-colum ">10</td>
             <td class="table-shareholders-colum ">16</td>
         </tr>
-    </table>
+    </table>--%>
 </asp:Content>

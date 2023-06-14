@@ -178,3 +178,4 @@ D:\LoiDzDb\2_Nam_2\Practices\Code\IntegratedHrPayroll\obj\Debug\IntegratedHrPayr
 D:\LoiDzDb\2_Nam_2\Practices\Code\IntegratedHrPayroll\obj\Debug\IntegratedHrPayroll.csproj.CopyComplete
 D:\LoiDzDb\2_Nam_2\Practices\Code\IntegratedHrPayroll\obj\Debug\IntegratedHrPayroll.dll
 D:\LoiDzDb\2_Nam_2\Practices\Code\IntegratedHrPayroll\obj\Debug\IntegratedHrPayroll.pdb
+D:\LoiDzDb\2_Nam_2\Practices\Code\IntegratedHrPayroll\bin\LitJson.dll

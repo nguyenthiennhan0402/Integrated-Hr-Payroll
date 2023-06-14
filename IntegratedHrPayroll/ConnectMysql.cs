@@ -5,6 +5,8 @@ using System.Web;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
+
 namespace IntegratedHrPayroll
 {
     public class ConnectMysql
@@ -14,8 +16,9 @@ namespace IntegratedHrPayroll
         MySqlConnection connection;
         public MySqlConnection Connectsql()
         {
-            strconn = "Server=localhost;Port=3306;Database=test;Uid=root;Pwd=loiloiloi;";
+            strconn = "Server=localhost;Port=3306;Database=payroll;Uid=root;Pwd=loiloiloi;";
             connection = new MySqlConnection(strconn);
+            Debug.WriteLine("====== connect ======");
             try
             {
                 connection.Open();

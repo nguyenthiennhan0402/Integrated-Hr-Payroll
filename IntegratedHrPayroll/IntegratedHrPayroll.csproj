@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LitJson, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Dragonboy-master\Lib\LitJson.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data">
       <HintPath>C:\Users\NGUYEN THIEN NHAN\Downloads\mysql-connector-net-8.0.33-noinstall\v4.6.2\MySql.Data.dll</HintPath>
@@ -294,6 +298,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HR\controller.cs" />
     <Compile Include="HR\route\api.cs" />
     <Compile Include="HR\DashboardHR.aspx.cs">
       <DependentUpon>DashboardHR.aspx</DependentUpon>

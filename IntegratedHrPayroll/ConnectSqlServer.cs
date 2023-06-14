@@ -13,7 +13,7 @@ namespace IntegratedHrPayroll
         SqlConnection conn;
         public ConnectSqlServer()
         {
-            sqlCon = @"Data Source=DESKTOP-M7AP43A;Initial Catalog=item;Integrated Security=True";
+            sqlCon = @"Data Source=DESKTOP-M7AP43A;Initial Catalog=HR;Integrated Security=True";
             conn = new SqlConnection(sqlCon);
         }
         public DataTable getData(string sql)
