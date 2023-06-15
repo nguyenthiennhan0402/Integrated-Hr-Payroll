@@ -37,6 +37,10 @@ namespace IntegratedHrPayroll
             MySqlDataAdapter da = new MySqlDataAdapter();
             da.SelectCommand = cmd;
             DataSet ds = new DataSet();
+            try
+            {
+            }
+            catch { }
             da.Fill(ds);
             return ds;
         }

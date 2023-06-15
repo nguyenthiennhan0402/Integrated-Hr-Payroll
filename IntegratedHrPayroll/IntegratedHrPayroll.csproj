@@ -177,25 +177,10 @@
     <Content Include="HR\assets\img\Profile.png" />
     <Content Include="HR\assets\js\JavaScript.js" />
     <Content Include="HR\DashboardHR.aspx" />
-    <Content Include="HR\dashboard.html" />
     <Content Include="HR\EmployeeHR.aspx" />
-    <Content Include="HR\employee.html" />
     <Content Include="HR\WarningHR.aspx" />
-    <Content Include="HR\warning.html" />
-    <Content Include="payroll\assets\css\style.css" />
-    <Content Include="payroll\assets\img\alert.png" />
-    <Content Include="payroll\assets\img\home.png" />
-    <Content Include="payroll\assets\img\Icon.png" />
-    <Content Include="payroll\assets\img\logo.png" />
-    <Content Include="payroll\assets\img\Profile.png" />
-    <Content Include="payroll\assets\img\suitcase.png" />
-    <Content Include="payroll\dashboard.aspx" />
-    <Content Include="payroll\listempl.aspx" />
-    <Content Include="payroll\warning.aspx" />
-    <Content Include="payroll\totalholiday.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
-    <Content Include="payroll\payrollMasterPage.Master" />
     <Content Include="Employee\Master.Master" />
     <Content Include="HR\masterHR.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -329,34 +314,6 @@
     <Compile Include="HR\WarningHR.aspx.designer.cs">
       <DependentUpon>WarningHR.aspx</DependentUpon>
     </Compile>
-    <Compile Include="payroll\dashboard.aspx.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="payroll\dashboard.aspx.designer.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="payroll\listempl.aspx.cs">
-      <DependentUpon>listempl.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="payroll\listempl.aspx.designer.cs">
-      <DependentUpon>listempl.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="payroll\payrollMasterPage.Master.cs">
-      <DependentUpon>payrollMasterPage.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="payroll\payrollMasterPage.Master.designer.cs">
-      <DependentUpon>payrollMasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="payroll\warning.aspx.cs">
-      <DependentUpon>warning.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="payroll\warning.aspx.designer.cs">
-      <DependentUpon>warning.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -371,13 +328,6 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
-    </Compile>
-    <Compile Include="payroll\totalholiday.aspx.cs">
-      <DependentUpon>totalholiday.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="payroll\totalholiday.aspx.designer.cs">
-      <DependentUpon>totalholiday.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

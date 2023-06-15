@@ -11,38 +11,20 @@
                     <td class="table-total-em-col1">Total Employee</td>
                     <td class="table-total-em-col2" rowspan="2">
                         <canvas id="myChart"></canvas>
-                        <%--<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg">
-                            <% int[] data = {  }; %>
-                            <% int total = data.Sum(); %>
-                            <% double startAngle = 0; %>
-                            <% double radius = 75; %> <!-- Thay đổi bán kính thành 75% -->
-                            <% double centerX = 75; %> <!-- Thay đổi tâm X thành 100 -->
-                            <% double centerY = 125; %> <!-- Thay đổi tâm Y thành 100 -->
-                            <% for (int i = 0; i < data.Length; i++)
-                                { %>
-                                    <% double percentage = (double)data[i] / total * 100; %>
-                                    <% double endAngle = startAngle + percentage * 3.6; %>
-                                    <% double startX = centerX + Math.Cos(Math.PI * startAngle / 180) * radius; %>
-                                    <% double startY = centerY + Math.Sin(Math.PI * startAngle / 180) * radius; %>
-                                    <% double endX = centerX + Math.Cos(Math.PI * endAngle / 180) * radius; %>
-                                    <% double endY = centerY + Math.Sin(Math.PI * endAngle / 180) * radius; %>
-                                    <path d="M<%= centerX %>,<%= centerY %> L<%= startX %>,<%= startY %> A<%= radius %>,<%= radius %> 0 <%= (percentage > 50) ? '1' : '0' %> 1 <%= endX %>,<%= endY %> Z" fill="<%= GetRandomColor(i) %>" stroke="<%= GetRandomColor(i) %>" />
-                                    <% startAngle = endAngle; %>
-                            <%  } %>
-                        </svg>--%>
-                        <%--<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg">
-                            <defs>
-                                <linearGradient id="GradientColor">
-                                    <stop offset="0%" stop-color="#e91e63" />
-                                    <stop offset="100%" stop-color="#673ab7" />
-                                </linearGradient>
-                            </defs>
-                            <circle cx="50%" cy="50%" r="30%" stroke-linecap="round" style="--offset: <% if(Session["totalem"] == null) { %>1<% } else { %> <%= Session["totalem"] %> <% } %>;" />
-                        </svg>--%>
                     </td>
                 </tr>
                 <tr class="table-total-em-row2">
-                    <td class="table-total-em-col1">639</td>
+                    <% var data = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(Session["data"] + ""); %>
+                    <% int sum = 0; %>
+                    <% foreach (var item in data)
+                        { %>
+                    <% try
+                        {
+                            sum += Convert.ToInt32(item.value + "");
+                        }
+                        catch { } %>
+                    <% } %>
+                    <td class="table-total-em-col1"><%= sum %></td>
                 </tr>
             </table>
         </div>
