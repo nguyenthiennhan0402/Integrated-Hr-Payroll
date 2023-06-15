@@ -16,7 +16,7 @@ namespace IntegratedHrPayroll.HR
         private static ConnectMysql DBPR = new ConnectMysql();
 
         // Time hiện tại
-        public static long currentTimeMillis()
+        private static long currentTimeMillis()
         {
             DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             return (DateTime.UtcNow.Ticks - dateTime.Ticks) / 10000L;
@@ -40,7 +40,7 @@ namespace IntegratedHrPayroll.HR
             "ýỳỵỷỹ",
             "ÝỲỴỶỸ"
         };
-        public static string utf8Convert1(string str)
+        private static string utf8Convert1(string str)
         {
             //Thay thế và lọc dấu từng char      
             for (int i = 1; i < VietNamChar.Length; i++)
@@ -51,11 +51,11 @@ namespace IntegratedHrPayroll.HR
             return str;
         }
 
-        // Khu vực code của DashboardPage
+        // DashboardPage
 
         private class DataDashBoard
         {
-            public List<object> data = new List<object>();
+            public List<object> listEmp = new List<object>();
             public long lastTimeUpdate;
         }
 
@@ -65,7 +65,7 @@ namespace IntegratedHrPayroll.HR
         {
             if (currentTimeMillis() - dash.lastTimeUpdate < 30000)
             {
-                dashboard.Session["data"] = JsonConvert.SerializeObject(dash.data);
+                dashboard.Session["data"] = JsonConvert.SerializeObject(dash.listEmp);
                 return;
             }
             dash.lastTimeUpdate = currentTimeMillis();
@@ -74,18 +74,18 @@ namespace IntegratedHrPayroll.HR
                 "WHERE End_Date IS NULL " +
                 "GROUP BY Department";
             var tb = DBHR.getData(sql);
-            dash.data = new List<object>();
+            dash.listEmp = new List<object>();
             for (int i = 0; i < tb.Rows.Count; i++)
-                dash.data.Add(new
+                dash.listEmp.Add(new
                 {
                     label = tb.Rows[i][0] + "",
                     value = tb.Rows[i][1] + ""
                 });
-            dashboard.Session["data"] = JsonConvert.SerializeObject(dash.data);
+            dashboard.Session["data"] = JsonConvert.SerializeObject(dash.listEmp);
         }
 
 
-        // Khu vực code của EmployeePage
+        //  EmployeePage
 
         public static void loadEmployeePage(Employee employee)
         {
@@ -120,6 +120,14 @@ namespace IntegratedHrPayroll.HR
 
             employee.Session["data_employee"] = JsonConvert.SerializeObject(tb);
             employee.Session["data_employee2"] = JsonConvert.SerializeObject(tb2);
+        }
+
+
+        // Warning page
+
+        public static void loadWarningPage(Warning warning)
+        {
+
         }
     }
 }
