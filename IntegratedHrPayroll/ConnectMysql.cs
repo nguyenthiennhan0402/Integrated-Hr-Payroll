@@ -37,5 +37,16 @@ namespace IntegratedHrPayroll
             da.Fill(ds);
             return ds;
         }
+
+        public int UpdateData(string sql)
+        {
+            MySqlConnection con = Connectsql();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.Connection = con;
+            con.Open();
+            int rowsAffected = cmd.ExecuteNonQuery();
+            con.Close();
+            return rowsAffected;
+        }
     }
 }

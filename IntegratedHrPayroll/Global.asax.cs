@@ -25,6 +25,7 @@ namespace IntegratedHrPayroll
             // Đăng ký các route của HR controller
             HR.web.initRoute();
 
+            Employee.route.web.initRoute();
         }
     }
 }

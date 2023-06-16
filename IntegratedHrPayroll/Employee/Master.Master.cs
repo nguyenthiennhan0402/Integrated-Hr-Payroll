@@ -12,23 +12,7 @@ namespace IntegratedHrPayroll.Employee
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            atagprofile.ServerClick += atag_Click;
-            atagschedule.ServerClick += atag_Click;
-            atagbenefit.ServerClick += atag_Click;
-            atagnotification.ServerClick += atag_Click;
             if (IsPostBack) return;
-        }
-
-        protected void atag_Click(object sender, EventArgs e)
-        {
-            if((sender as HtmlAnchor).ID == "atagprofile")
-                Response.Redirect("profile.aspx");
-            else if((sender as HtmlAnchor).ID == "atagschedule")
-                Response.Redirect("work-schedule.aspx");
-            else if ((sender as HtmlAnchor).ID == "atagbenefit")
-                Response.Redirect("account-benefit.aspx");
-            else if ((sender as HtmlAnchor).ID == "atagnotification")
-                Response.Redirect("notification.aspx");
         }
     }
 }

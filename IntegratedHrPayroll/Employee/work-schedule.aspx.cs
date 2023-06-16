@@ -13,20 +13,29 @@ namespace IntegratedHrPayroll.Employee
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            string idEm = Session["UserId"] + "";
+            if (idEm == "")
             {
-                string employeeId = "1001"; 
+                Response.Redirect("~/LoginPage/Login.aspx");
+            }
+            else
+            {
+                if (!IsPostBack)
+                {
+                    string employeeId = Session["EmpID"].ToString();
 
-                ConnectSqlServer sqlConn = new ConnectSqlServer();
+                    ConnectSqlServer sqlConn = new ConnectSqlServer();
 
-                string query = "SELECT Start_Date, End_Date, Job_Title, Department, Location, Supervisor " +
-                               "FROM Job_History " +
-                               "WHERE Employee_ID = @EmployeeID";
+                    string query = "SELECT Start_Date, End_Date, Job_Title, Department, Location, Supervisor " +
+                                   "FROM Job_History " +
+                                   "WHERE Employee_ID = @EmployeeID";
 
-                DataTable dataTable = sqlConn.getDataWithParam(query, new SqlParameter("@EmployeeID", employeeId));
+                    DataTable dataTable = sqlConn.getDataWithParam(query, new SqlParameter("@EmployeeID", employeeId));
 
-                repeaterWorkSchedule.DataSource = dataTable;
-                repeaterWorkSchedule.DataBind();
+                    repeaterWorkSchedule.DataSource = dataTable;
+                    repeaterWorkSchedule.DataBind();
+                }
+
             }
         }
     }

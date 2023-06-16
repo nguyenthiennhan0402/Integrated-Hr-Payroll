@@ -13,8 +13,8 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    text-transform: capitalize;
     border: none;
+    text-transform: capitalize;
     outline: none;
 }
 
@@ -179,6 +179,7 @@ header {
         color: var(--white);
         font-weight: 600;
         padding-right: 3rem;
+        text-transform: none;
     }
 
     .input-box .icon {

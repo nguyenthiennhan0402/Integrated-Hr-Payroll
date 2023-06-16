@@ -23,32 +23,34 @@
             </header>
             <!-- main header section ends -->
         </div>
-        <div id="nav">
-            <!-- nav section starts -->
-            <div class="left-menu">
-                <nav>
-                    <a runat="server" id="atagprofile" class="profile">
-                        <i class="fa-solid fa-user"></i>
-                        <span>profile</span>
-                    </a>
-                    <a runat="server" id="atagschedule" class="work-schedule">
-                        <i class="fa-regular fa-clock"></i>
-                        <span>work schedule</span>
-                    </a>
-                    <a runat="server" id="atagbenefit" class="account-benefit">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>account & benefit</span>
-                    </a>
-                    <a runat="server" id="atagnotification" class="notification">
-                        <i class="fa-regular fa-bell"></i>
-                        <span>notification</span>
-                    </a>
-                </nav>
+        <div class="body-container">
+            <div id="nav">
+                <!-- nav section starts -->
+                <div class="left-menu">
+                    <nav>
+                        <a runat="server" href="profile.aspx" class="profile">
+                            <i class="fa-solid fa-user"></i>
+                            <span>profile</span>
+                        </a>
+                        <a runat="server" href="work-schedule.aspx" class="work-schedule">
+                            <i class="fa-regular fa-clock"></i>
+                            <span>work schedule</span>
+                        </a>
+                        <a runat="server" href="account-benefit.aspx" class="account-benefit">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>account & benefit</span>
+                        </a>
+                        <a runat="server" href="~/LoginPage/Login.aspx?logout=true" class="logout">
+                            <<i class="fa-solid fa-right-from-bracket"></i>
+                            <span>logout</span>
+                        </a>
+                    </nav>
+                </div>
+                <!-- nav section ends -->
             </div>
-            <!-- nav section ends -->
-        </div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
+        </div>
     </form>
 </body>
 </html>

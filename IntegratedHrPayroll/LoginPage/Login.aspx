@@ -7,13 +7,13 @@
         </span>
         <div class="form-box">
             <h2>login</h2>
-            <form action="#">
+            <form>
                 <div class="input-box">
                     <span class="icon">
-                        <ion-icon name="mail-outline"></ion-icon>
+                        <ion-icon name="person"></ion-icon>
                     </span>
-                    <asp:TextBox CssClass="input" ID="txtEmail" runat="server" TextMode="Email" required />
-                    <label>email</label>
+                    <asp:TextBox CssClass="input" ID="txtUsername" runat="server" Text="tuanhuynh" required />
+                    <label>UserName</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">

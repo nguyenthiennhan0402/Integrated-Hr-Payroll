@@ -23,9 +23,9 @@
 
 html {
     font-size: 62.5%;
-    overflow-x: hidden;
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
+    overflow: scroll;
 }
 
 body {
@@ -100,6 +100,7 @@ header {
     background-color: var(--menu-color);
     border: var(--border-line);
     border-top: none;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);
 }
 
 .left-menu {
@@ -118,12 +119,12 @@ header {
         width: 100%;
     }
 
-nav div {
+nav a {
     display: flex;
     align-items: center;
     height: 6rem;
-    border-bottom: var(--border-line);
     cursor: pointer;
+    border-bottom: var(--border-line);
 }
 
 nav i {
@@ -161,6 +162,7 @@ nav span {
     border-bottom: var(--border-line);
     font-size: 4rem;
     font-weight: 700;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);
 }
 
 /* profile css */
@@ -173,11 +175,15 @@ nav span {
 }
 
     #profile .lbShow {
-        color: #000;
-        font-size: 10rem;
-        position: absolute;
-        top: 30%;
-        left: 30%;
+        background: #44b2f2;
+        padding: 2rem 4rem;
+        color: #fff;
+        font-weight: bold;
+        font-size: 4rem;
+        position: fixed;
+        bottom: 10%;
+        right: 5%;
+        border-radius: 2rem;
     }
 
     #profile .basic-info {
@@ -185,6 +191,11 @@ nav span {
         top: 10%;
         left: 5%;
         width: 40%;
+        background: rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        border: var(--border-line);
+        border-radius: 3rem;
+        box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.3);
     }
 
         #profile .basic-info .title,
@@ -206,25 +217,42 @@ nav span {
 
         #profile .box-item .label {
             font-size: 2rem;
-            color: var(--black-color);
-            width: 40%;
+            color: #00189d;
+            font-weight: bold;
+            width: 30%;
         }
 
         #profile .box-item .input {
             border-radius: .4rem;
             font-size: 2.2rem;
-            width: 60%;
-            margin-left: 2%;
-            border: var(--border-line);
+            width: 70%;
+            color: #00189d;
+            text-transform: none !important;
+            border: .1rem solid #44b2f2;
         }
 
-    /* contact info css */
+            #profile .box-item .input:focus {
+                padding-left: 2rem;
+                color: orangered;
+                font-weight: bolder;
+                border: dashed;
+            }
 
+            #profile .box-item .input:valid {
+                padding: 0 .8em;
+            }
+
+    /* contact info css */
     #profile .contact-info {
         position: absolute;
-        top: 45%;
-        left: 5%;
-        width: 40%;
+        top: 35%;
+        right: 18%;
+        width: 35%;
+        background: rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        border: var(--border-line);
+        border-radius: 3rem;
+        box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.3);
     }
 
     /* box avatar css */
@@ -238,13 +266,16 @@ nav span {
         #profile .box-avatar img {
             width: 20rem;
             position: absolute;
+            border: var(--border-line);
+            border-radius: 3rem;
+            box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.3);
         }
 
     /* button update css */
     #profile .update-btn {
         position: absolute;
         left: 40%;
-        bottom: 25%;
+        bottom: 20%;
         text-transform: uppercase;
         width: 14rem;
         height: 6rem;
@@ -254,6 +285,7 @@ nav span {
         border-radius: 2rem;
         font-size: 18px;
         font-weight: 700;
+        box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.3);
     }
 
         #profile .update-btn:hover {
@@ -270,17 +302,15 @@ nav span {
     height: 100%;
     left: 15%;
     top: 8%;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 #workScheduleTable {
     position: fixed;
     width: 75%;
     top: 18%;
-    border-collapse: inherit;
     left: 20%;
-    background: aquamarine;
+    background: #00189d;
+    box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.6);
 }
 
     #workScheduleTable th,
@@ -307,20 +337,25 @@ nav span {
 
 /* account and benefit css */
 #account-benefit {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 15%;
-    top: 8%;
+    position: relative;
 }
+
+    #account-benefit #title {
+        position: fixed;
+        top: 8%;
+        left: 15%;
+    }
 
     #account-benefit .chart-container {
         position: fixed;
         top: 18%;
         left: 20%;
-        display: block;
-        height: 60rem;
-        width: 100%;
+        width: 40%;
+        padding: 2rem;
+        box-shadow: 0 0.9rem 1.5rem rgba(0, 0, 0, 0.3);
+        border-radius: 3rem;
+        background: rgba(0, 0, 0, 0.05);
+        border: .1rem solid #00189d;
     }
 
         #account-benefit .chart-container .text {
@@ -331,50 +366,54 @@ nav span {
 
     #account-benefit .benefit {
         position: fixed;
-        left: 20%;
-        top: calc(24% + 60rem);
-        display: block;
-        width: 70%;
-        padding: 2rem;
-        border: .2rem solid #00189d;
+        top: 18%;
+        right: 5%;
+        width: 30%;
+        padding-left: 2rem;
+        border: .1rem solid #00189d;
+        border-radius: 3rem;
+        background: rgba(0, 0, 0, 0.05);
+        box-shadow: 0 0.9rem 1.5rem rgba(0, 0, 0, 0.5);
     }
 
-.benefit h1 {
-    font-size: 2.4rem;
-    margin-bottom: 2rem;
-}
+        #account-benefit .benefit h1 {
+            font-size: 3rem;
+            color: #00189d;
+            font-weight: bolder;
+            margin-top: 1rem;
+        }
 
-.benefit h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
+        #account-benefit .benefit h2 {
+            margin-left: 4rem;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            margin-top: 2.5rem;
+        }
 
-.benefit .label {
-    font-weight: bold;
-    margin-right: 10px;
-}
+        #account-benefit .benefit .lbTitle {
+            margin-left: 8rem;
+            display: inline-block;
+            width: 50%;
+            font-size: 1.6rem;
+        }
 
-.benefit .employee-info {
-    display: inline-block;
-    margin-bottom: 10px;
-}
+        #account-benefit .benefit .employee-info {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+        }
 
-.benefit ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 10px;
-}
+        #account-benefit .benefit ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 1rem;
+        }
 
-    .benefit ul li {
-        margin-bottom: 5px;
-    }
-
-/* notification css */
-#notification {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 15%;
-    top: 8%;
-}
+            #account-benefit .benefit ul li {
+                margin-left: 8rem;
+                display: inline-block;
+                width: 50%;
+                margin-bottom: 1rem;
+                font-size: 1.6rem;
+            }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -12,56 +13,69 @@ namespace IntegratedHrPayroll.Employee.aspx
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            string idEm = Session["UserId"] + "";
+            if (idEm == "")
             {
-                string query = "SELECT P.First_Name, P.Last_Name, P.Middle_Initial, P.Gender, JH.Job_Title, JH.Department, P.Email, P.Phone_Number, P.Address1 FROM Personal P INNER JOIN Job_History JH ON P.Employee_ID = JH.Employee_ID WHERE P.Employee_ID = 1001";
-
-                ConnectSqlServer sqlConn = new ConnectSqlServer();
-                DataTable dt = sqlConn.getData(query);
-
-                if (dt.Rows.Count > 0)
+                Response.Redirect("~/LoginPage/Login.aspx");
+            }
+            else
+            {
+                string email = Session["email"] + "";
+                if (!IsPostBack)
                 {
-                    DataRow row = dt.Rows[0];
-                    txtName.Text = row["First_Name"].ToString() + " " + row["Last_Name"].ToString() + " " + row["Middle_Initial"].ToString();
-                    if (row["Gender"].ToString() == "True")
+                    string querySQL = "SELECT p.First_Name, p.Last_Name, p.Middle_Initial, Case When p.Gender = 0 " +
+                        " then 'Female' when p.Gender=1 then 'Male' end as Gender, p.Employee_ID, j.Job_Title, " +
+                        "j.Department, p.Address1, p.City, p.State, p.Ethnicity, p.Email, p.Phone_Number " +
+                        "FROM Personal p INNER JOIN Job_History j ON p.Employee_ID = j.Employee_ID Where p.Email = '" +
+                        email + "' and j.End_Date is null";
+                    string queryMySQL = "select e.SSN from employee e where e.idEmployee = " + idEm;
+
+                    ConnectSqlServer DBHR = new ConnectSqlServer();
+                    DataTable table = DBHR.getData(querySQL);
+
+                    ConnectMysql DBPR = new ConnectMysql();
+                    DataSet dt = DBPR.gettable(queryMySQL);
+
+                    if (table.Rows.Count > 0 && dt.Tables.Count > 0 && dt.Tables[0].Rows.Count > 0)
                     {
-                        txtGender.Text = "Male";
+                        DataRow hrrow = table.Rows[0];
+                        DataRow prrow = dt.Tables[0].Rows[0];
+                        txtName.Text = hrrow["First_Name"] + " " + hrrow["Last_Name"] + " " + hrrow["Middle_Initial"];
+                        txtGender.Text = hrrow["Gender"].ToString();
+                        txtEmpNum.Text = hrrow["Employee_ID"].ToString();
+                        Session["EmpID"] = hrrow["Employee_ID"].ToString();
+                        txtSsn.Text = prrow["SSN"].ToString();
+                        txtPos.Text = hrrow["Job_Title"].ToString();
+                        txtDep.Text = hrrow["Department"].ToString();
+                        txtAddress.Text = hrrow["Address1"] + ", " + hrrow["City"] + ", " + hrrow["State"];
+                        txtEthnicity.Text = hrrow["Ethnicity"].ToString();
+                        txtEmail.Text = hrrow["Email"].ToString();
+                        txtPhone.Text = hrrow["Phone_Number"].ToString();
                     }
-                    else
-                    {
-                        txtGender.Text = "Female";
-                    }
-                    txtPosition.Text = row["Job_Title"].ToString();
-                    txtDepartment.Text = row["Department"].ToString();
-                    txtEmail.Text = row["Email"].ToString();
-                    txtPhoneNumber.Text = row["Phone_Number"].ToString();
-                    txtAddress.Text = row["Address1"].ToString();
                 }
             }
         }
 
         protected void update_click(object sender, EventArgs e)
         {
-            string employeeID = "1001";
+            string empID = Session["UserId"] + "";
             string name = txtName.Text;
             string[] nameParts = name.Split(' ');
             string firstName = nameParts[0];
-            string lastName = nameParts[1];
-            string middleInitial = string.Join(" ", nameParts.Skip(2));
-            string gender = txtGender.Text == "Male" ? "1" : "0";
-            string position = txtPosition.Text;
-            string department = txtDepartment.Text;
-            string email = txtEmail.Text;
-            string phoneNumber = txtPhoneNumber.Text;
-            string address = txtAddress.Text;
+            string lastName = nameParts[0];
+            string middle = string.Join(" ", nameParts.Skip(2));
+            string mail = txtEmail.Text;
+            string phone = txtPhone.Text;
+            string empnum = txtEmpNum.Text;
+            string upSql = string.Format("UPDATE Personal SET First_Name = '{0}', Last_Name = '{1}', Middle_Initial = '{2}', Email = '{3}', Phone_Number = '{4}' WHERE Employee_ID = {5}", firstName, lastName, middle, mail, phone, empnum);
+            string upMysql = string.Format("UPDATE users set email = '{0}' where id = '{1}'", mail, empID);
 
-            string updatePersonalQuery = string.Format("UPDATE Personal SET First_Name = '{0}', Last_Name = '{1}', Middle_Initial = '{2}', Gender = '{3}', Email = '{4}', Phone_Number = '{5}', Address1 = '{6}' WHERE Employee_ID = {7}", firstName, lastName, middleInitial, gender, email, phoneNumber, address, employeeID);
-            string updateJobHistoryQuery = string.Format("UPDATE Job_History SET Job_Title = '{0}', Department = '{1}' WHERE Employee_ID = {2}", position, department, employeeID);
+            ConnectSqlServer sqlCon = new ConnectSqlServer();
+            int rowsAffectedSql = sqlCon.UpdateData(upSql);
 
-            ConnectSqlServer sqlConn = new ConnectSqlServer();
-            int rowsAffectedPersonal = sqlConn.UpdateData(updatePersonalQuery);
-            int rowsAffectedJobHistory = sqlConn.UpdateData(updateJobHistoryQuery);
-            if (rowsAffectedPersonal > 0 && rowsAffectedJobHistory > 0)
+            ConnectMysql mysqlCon = new ConnectMysql();
+            int rowsAffectedMySql = mysqlCon.UpdateData(upMysql);
+            if (rowsAffectedMySql > 0 && rowsAffectedSql > 0)
             {
                 lbShow.Text = "Update Successful!";
             }
@@ -70,6 +84,5 @@ namespace IntegratedHrPayroll.Employee.aspx
                 lbShow.Text = "Update Failed!";
             }
         }
-
     }
 }
